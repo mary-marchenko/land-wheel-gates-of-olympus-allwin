@@ -1,0 +1,67 @@
+button.menu-btn menu
+.menu-test
+    button.popup1 popup 1
+    button.popup2 popup 2
+.bonus
+  .bonus__overlay.opacity-overlay
+    .bonus__firstWin.hide
+      .bonus__firstWin-info
+        .bonus__firstWin-title Вітаємо, ти виграв фріспіни
+        .bonus__firstWin-decor
+            picture
+                source(media="(min-width: 600px) and (min-height: 501px) and (orientation: landscape)" srcset="img/diamonds.png")
+                source(media="(min-width: 601px) and (max-width: 1300px) and (orientation: portrait)" srcset="img/diamonds-tab.png")
+                source(media="(max-width: 600px) and (orientation: portrait)" srcset="img/diamonds-tab.png")
+                source(media="(max-width: 950px) and (orientation: landscape) and (max-height: 500px)" srcset="img/diamonds-tab.png")
+                img(src="img/diamonds.png" alt="diamonds")
+        .bonus__firstWin-win 600 FS
+        .bonus__firstWin-text У тебе #[span +1] спроба
+        .bonus__firstWin-btn Крути ще
+
+    .bonus__secondWin.hide
+      .bonus__secondWin-info
+        .bonus__secondWin-title Вітаємо, ти виграв бонус
+            .bonus__firstWin-decor
+                picture
+                    source(media="(min-width: 600px) and (min-height: 501px) and (orientation: landscape)" srcset="img/diamonds.png")
+                    source(media="(min-width: 601px) and (max-width: 1300px) and (orientation: portrait)" srcset="img/diamonds-tab.png")
+                    source(media="(max-width: 600px) and (orientation: portrait)" srcset="img/diamonds-tab.png")
+                    source(media="(max-width: 950px) and (orientation: landscape) and (max-height: 500px)" srcset="img/diamonds-tab.png")
+                    img(src="img/diamonds.png" alt="diamonds")
+        .bonus__secondWin-win #[span.to до] 215 000₴ #[br] +600 FS
+        a(href='https://allwinua.com/short-register/?from=login-page').bonus__secondWin-btn Забрати бонус
+  .bonus__main-logo
+  .bonus__main
+    .bonus__main-buttons
+      a(href='https://allwinua.com/short-register/?from=login-page' target='_blank').bonus__main-buttons-right Реєстрація
+    .bonus__main-txt
+      .bonus__main-txt-top Грай в гру #[br] богів
+      .bonus__main-txt-midle Забирай бонус
+      .bonus__main-txt-center У тебе #[span 2] спроби
+    .bonus__main-wrapper
+      .bonus__main-wheel
+        .bonus__main-wheel-wrap
+            .bonus__main-wheel-btn.position.pulse-btn
+            .bonus__main-wheel-frame
+            .bonus__main-wheel-reel.position
+            .bonus__main-wheel-light.position
+            .bonus__main-wheel-pers.position
+
+
+.bonus__footer
+  .bonus__footer-row
+    .bonus__footer-info
+      .bonus__footer-info-licensed
+        img(src='img/visa.svg' alt='visa').bonus__footer-info-licensed-img
+        img(src='img/mastercard.svg' alt='mastercard').bonus__footer-info-licensed-img
+        img(src='img/googlePay.svg' alt='googlePay').bonus__footer-info-licensed-img
+        img(src='img/applePay.svg' alt='applePay').bonus__footer-info-licensed-img
+        img(src='img/coinsPaid.svg' alt='coinsPaid').bonus__footer-info-licensed-img
+
+.bonus__legal УЧАСТЬ В АЗАРТНИХ ІГРАХ МОЖЕ ВИКЛИКАТИ ІГРОВУ ЗАЛЕЖНІСТЬ. ДОТРИМУЙТЕСЯ ПРАВИЛ (ПРИНЦИПІВ) ВІДПОВІДАЛЬНОЇ ГРИ
+.bonus__legal-desc
+  .bonus__legal-desc-wrap
+
+
+
+

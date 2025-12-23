@@ -1,0 +1,590 @@
+$black: #090A18
+$green-blue: #00CDCF
+$green-blue-hover-maket: #09D6D8
+$green-blue-hover: #00b4b7
+$blue: #3396D3
+$white: #FFFFFF
+$gray: #E3E6E8
+$text: #1B1B1F
+$bg: #0B1E2A
+
+$font-allwinn-norm-bold: AllwinnDisplay-NormalBold, sans-serif //700 //
+$font-allwinn-cond-bold: AllwinnDisplay-CondensedBold, sans-serif //700 //
+$font-allwinn-wide-bold: AllwinnDisplay-WideBold, sans-serif //700 //
+$font-allwinn-norm-med: AllwinnDisplay-NormalMedium, sans-serif //500 //
+$font-exo2-semiBold: 'Exo2-SemiBold', sans-serif // 600
+$font-din: DINPro-CondLight, sans-serif
+
+
+//test
+.menu-btn
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 20
+  width: fit-content
+  background: $white
+  padding: 3px
+
+.menu-test
+  position: fixed
+  left: 0
+  top: 25px
+  z-index: 20
+  display: flex
+  gap: 2px
+  flex-direction: column
+  & > button
+    width: fit-content
+    background: $white
+    color: black
+    padding: 2px
+    font-family: inherit
+    border-radius: 2px
+
+
+
+body
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  overscroll-behavior: none
+  background: $bg
+  img
+    max-width: 100%
+    height: auto
+
+
+.position
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  margin: auto
+
+.bonus
+  width: 100%
+  height: 100%
+  overflow: hidden
+  position: relative
+  background: $bg url('../img/bg-desc.jpg') no-repeat 50% 0/cover
+  @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 501px)
+    background: $bg url('../img/bg-desc.jpg') no-repeat 50% 0/cover
+  @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
+    background: $bg  url('../img/bg-tab.jpg') no-repeat 50% 0/cover
+  @media screen and (max-width: 500px) and (orientation: portrait)
+    background: $bg url("../img/bg-mob.jpg") no-repeat 50% 50%/cover
+  @media (max-width: 950px) and (orientation: landscape) and (max-height: 500px)
+    background: $bg url("../img/bg-landscape.jpg") no-repeat 50% 0/cover
+  &__overlay
+    background: rgba(6, 16, 20, 0.80)
+    backdrop-filter: blur(4px)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 10
+    transition: opacity 1s linear, visibility .5s linear
+  &__firstWin,
+  &__secondWin
+    position: relative
+    width: 716px
+    min-width: 716px
+    height: 479px
+    min-height: 470px
+    background: url('../img/popup-bg.png') no-repeat 50% 0/contain
+    //transform: scale(1.4)
+    @media screen and (max-width: 1300px) and (orientation: portrait)
+      background: url('../img/popup-bg-mob.png') no-repeat 50% 0/contain
+      width: 427px
+      min-width: 427px
+      height: 524px
+      min-height: 524px
+  &__firstWin
+    padding: 94px 81px 0
+    &-info
+      display: flex
+      align-items: center
+      flex-direction: column
+      height: 100%
+    &-title
+      color: $gray
+      font-family: $font-allwinn-cond-bold
+      font-size: 40px
+      line-height: 40px
+      text-align: center
+      margin: 0 0 20px 0
+      text-transform: uppercase
+    &-decor
+      left: 15%
+      position: absolute
+      max-width: fit-content
+      width: 486px
+      top: 32%
+      animation: levitate 3.3s ease-in-out infinite
+    &-win
+      white-space: nowrap
+      text-shadow: 0 0 40px #0C1F2C
+      font-family: $font-allwinn-cond-bold
+      font-size: 64px
+      line-height: 64px
+      margin: 45px 0 13px 0
+      text-align: center
+      letter-spacing: 1.92px
+      color: $white
+      position: relative
+      .star
+        position: absolute
+        top: -22px
+        right: -11px
+        font-family: $font-allwinn-norm-med
+        font-size: 20px
+        padding-top: 5px
+        display: inline-block
+        color: $white
+    &-text
+      white-space: nowrap
+      display: flex
+      justify-content: center
+      align-items: center
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25)
+      font-family: $font-allwinn-norm-med
+      font-size: 18px
+      line-height: 14px
+      text-align: center
+      letter-spacing: 0.54px
+      color: $white
+      width: 100%
+      margin-bottom: 30px
+      span
+        display: flex
+        justify-content: center
+        align-items: center
+        font-family: inherit
+        color: $white
+        background-color: $blue
+        width: 24px
+        height: 24px
+        border-radius: 50%
+        margin: 0 10px
+    &-btn
+      cursor: pointer
+      font-family: $font-exo2-semiBold
+      padding: 15px 20px
+      text-align: center
+      max-width: 128px
+      font-size: 18px
+      line-height: 21px
+      text-transform: uppercase
+      border-radius: 6px
+      background: $green-blue
+      color: $black
+      transition: all .3s ease
+      &:hover
+        transform: scale(1.1)
+        background: $green-blue-hover
+    //&-bottom
+    //  margin-top: 102px
+    //  color: $white
+    //  font-family: $font-exo2-semiBold
+    //  font-size: 10px
+    //  line-height: 14px
+    //  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25)
+    //  width: 295px
+    //  text-align: center
+    //  opacity: 0.7
+  &__secondWin
+    padding: 94px 81px 0
+    &-info
+      display: flex
+      flex-direction: column
+      height: 100%
+      align-items: center
+    &-title
+      color: $white
+      font-family: $font-allwinn-cond-bold
+      font-size: 40px
+      line-height: 40px
+      text-align: center
+      margin: 0 0 20px 0
+      span
+        font-family: $font-allwinn-cond-bold
+        color: $white
+        font-size: 38px
+        line-height: 48px
+        letter-spacing: 0.38px
+    &-win
+      text-shadow: 0 0 40px #0C1F2C
+      font-family: $font-allwinn-cond-bold
+      font-size: 48px
+      line-height: 40px
+      margin: 45px 0 45px 0
+      text-align: center
+      letter-spacing: 1.44px
+      color: $white
+      position: relative
+      white-space: nowrap
+      span
+        &.to
+          font-family: inherit
+          text-shadow: 0 4px 9px rgba(0, 0, 0, 0.10)
+          font-size: 20px
+          line-height: 40px
+          letter-spacing: 0.6px
+        &.star
+          position: absolute
+          top: -14px
+          right: -12px
+          font-family: $font-allwinn-norm-med
+          font-size: 20px
+          padding-top: 5px
+          display: inline-block
+          color: $white
+    //&-bottom
+    //  margin-top: 102px
+    //  color: $white
+    //  font-family: $font-exo2-semiBold
+    //  font-size: 10px
+    //  line-height: 14px
+    //  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25)
+    //  width: 295px
+    //  text-align: center
+    //  opacity: 0.7
+    &-btn
+      max-width: 178px
+      cursor: pointer
+      font-family: $font-exo2-semiBold
+      padding: 15px 19px
+      text-align: center
+      font-size: 18px
+      line-height: 21px
+      text-transform: uppercase
+      border-radius: 6px
+      background: $green-blue
+      color: $black
+      transition: all .3s ease
+      &:hover
+        transform: scale(1.1)
+        background: $green-blue-hover
+      &:hover
+        background: $green-blue-hover
+  &__main
+    //padding: 0 120px 0 55px
+    padding: 0 5% 0 3%
+    height: 100%
+    position: relative
+    display: flex
+    align-items: flex-end
+    justify-content: space-between
+    &-buttons
+      display: flex
+      position: absolute
+      top: 54px
+      right: 3%
+      &-right
+        display: inline-block
+        padding: 15px 20px
+        font-family: $font-exo2-semiBold
+        font-size: 18px
+        line-height: 18px
+        text-transform: uppercase
+        color: $black
+        background-color: $green-blue
+        border-radius: 6px
+        transition: all .3s ease
+        &:hover
+          transform: scale(1.1)
+          background: $green-blue-hover
+    &-logo
+      position: absolute
+      top: 50px
+      left: 3%
+      background: url("../img/logo.svg") no-repeat 0 0/contain
+      height: 68px
+      width: 248px
+      margin-bottom: 50px
+      z-index: 1
+    &-txt
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      align-self: center
+      justify-content: center
+      gap: 40px
+      height: 80%
+      //padding: 50px 0 333px
+      //margin: 0 147px 0 0
+      position: relative
+      .bonus__main-logo
+        display: block
+      &-top
+        max-width: 590px
+        font-family: $font-allwinn-norm-bold
+        white-space: nowrap
+        font-size: 114px
+        line-height: 114px
+        text-transform: uppercase
+        color: $white
+      &-midle
+        font-family: $font-allwinn-norm-med
+        color: $white
+        font-size: 72px
+        line-height: 72px
+      &-center
+        display: flex
+        align-items: center
+        font-family: $font-allwinn-norm-med
+        font-size: 40px
+        line-height: 32px
+        letter-spacing: 1.2px
+        color: $white
+        //margin: 0 0 65px 0
+        text-transform: uppercase
+        span
+          display: flex
+          justify-content: center
+          align-items: center
+          font-family: inherit
+          color: $white
+          background-color: $blue
+          width: 56px
+          height: 56px
+          border-radius: 50%
+          margin: 0 10px
+    &-wrapper
+      position: relative
+      z-index: 2
+      display: flex
+      align-items: flex-end
+      margin-bottom: 20px
+    &-wheel
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        width: 385px
+        height: 200px
+        background: url("../img/wheel-fav.png") no-repeat 0 0/contain
+        top: -100px
+        left: 49.7%
+        transform: translateX(-50%)
+        z-index: 4
+      &:after
+        content: ''
+        position: absolute
+        width: 421px
+        height: 329px
+        background: url("../img/wheel-leg.png") no-repeat 0 0/contain
+        bottom: -146px
+        left: 50%
+        transform: translateX(-50%)
+        z-index: 1
+      &-wrap
+        position: relative
+      &-btn
+        width: 207px
+        height: 207px
+        z-index: 5
+        top: -15px
+        cursor: pointer
+        background: url("../img/wheel-btn.png") no-repeat 0 0/contain
+        @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 501px)
+          background: url("../img/wheel-btn.png") no-repeat 0 0/contain
+        @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
+          background: url("../img/wheel-btn.png") no-repeat 0 0/contain
+        @media screen and (max-width: 500px) and (orientation: portrait)
+          background: url("../img/wheel-btn-mob.png") no-repeat 0 0/contain
+        @media (max-width: 950px) and (orientation: landscape) and (max-height: 500px)
+          background: url("../img/wheel-btn-mob.png") no-repeat 0 0/contain
+      &-frame
+        width: 840px
+        height: 840px
+        position: relative
+        margin: auto
+        z-index: 3
+        background: url("../img/wheel-frame.png") no-repeat 0 100%/contain
+        @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 501px)
+          background: url("../img/wheel-frame.png") no-repeat 0 100%/contain
+        @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
+          background: url("../img/wheel-frame.png") no-repeat 50% 100%/contain
+        @media screen and (max-width: 500px) and (orientation: portrait)
+          background: url("../img/wheel-frame-mob.png") no-repeat 50% 100%/contain
+        @media (max-width: 950px) and (orientation: landscape) and (max-height: 500px)
+          background: url("../img/wheel-frame-mob.png") no-repeat 50% 100%/contain
+      &-reel
+        width: 810px
+        height: 810px
+        top: 20px
+        left: 0
+        bottom: auto
+        z-index: 2
+        background: url("../img/wheel-reel.png") no-repeat 0 0/contain
+        @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 501px)
+          background: url("../img/wheel-reel.png") no-repeat 0 0/contain
+        @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
+          background: url("../img/wheel-reel.png") no-repeat 0 0/contain
+        @media screen and (max-width: 500px) and (orientation: portrait)
+          background: url("../img/wheel-reel-mob.png") no-repeat 0 0/contain
+        @media (max-width: 950px) and (orientation: landscape) and (max-height: 500px)
+          background: url("../img/wheel-reel-mob.png") no-repeat 0 0/contain
+      &-light
+        pointer-events: none
+        width: 1000px
+        height: 1000px
+        left: 50%
+        transform: translateX(-50%)
+        top: 0
+        z-index: 1
+        animation: 1.8s infinite lamps-light ease-in-out
+        background: url("../img/wheel-light4.svg") no-repeat 50% 50%/contain
+      &-pers
+        left: -117%
+        bottom: 80px
+        z-index: 1
+        width: 500px
+        height: 920px
+        animation: levitate 3.3s ease-in-out infinite
+        background: url("../img/pers-desc.png") no-repeat 0 0/contain
+        @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 501px)
+          background: url("../img/pers-desc.png") no-repeat 0 0/contain
+        @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
+          background: url("../img/pers-tab.png") no-repeat 0 0/contain
+        @media screen and (max-width: 500px) and (orientation: portrait)
+          background: url("../img/pers-mob.png") no-repeat 0 0/contain
+        @media (max-width: 950px) and (orientation: landscape) and (max-height: 500px)
+          background: url("../img/pers-tab.png") no-repeat 0 0/contain
+  &__footer
+    position: absolute
+    z-index: 5
+    bottom: 40px
+    left: 0
+    right: 0
+    padding: 0 3%
+    display: flex
+    align-items: center
+    overflow: hidden
+    &-row
+      padding-top: 15px
+      height: fit-content
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: space-between
+    //&-text
+    //  max-width: 470px
+    //  font-family: $font-exo2-semiBold
+    //  font-size: 16px
+    //  line-height: 22px
+    //  color: $grey
+    &-info
+      display: flex
+      align-items: center
+      &-licensed
+        display: flex
+        align-items: center
+        &-img
+          display: block
+          &:not(:last-child)
+            margin: 0 5px 0 0
+          &:last-child
+            margin-left: 10px
+  &__legal
+    //display: flex
+    display: none
+    background: $white
+    font-family: $font-din
+    font-size: 2.55vw
+    color: $text
+    height: fit-content
+    justify-content: center
+    align-items: center
+    padding-top: 3px
+    z-index: 5
+  &__legal-desc
+    margin-top: 1px
+    padding: 0 23px
+    z-index: 5
+    width: 100%
+    height: 170px
+    background: #ffffff
+    &-wrap
+      width: 100%
+      height: 100%
+      background: url("../img/warning.svg") no-repeat 50% center/contain
+
+
+.audio
+  display: none
+.pulse-btn
+  animation: 1.8s infinite pulse-btn ease-in-out
+
+@keyframes pulse-btn
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.07)
+  100%
+    transform: scale(1)
+
+
+@keyframes bulbs-opacity
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+
+
+@keyframes lamps-light
+  0%
+    transform: translateX(-50%) scale(1)
+  50%
+    transform: translateX(-50%) scale(1.1)
+  100%
+    transform: translateX(-50%) scale(1)
+
+.reel-rotation-first
+  animation: 6s reel-rotation-first cubic-bezier(.25,.75,.5,1.05) forwards
+
+@keyframes reel-rotation-first
+  0%
+    transform: rotate(0deg)
+  80%
+    transform: rotate(953deg)
+  90%
+    transform: rotate(941deg)
+  100%
+    transform: rotate(946deg)
+
+.reel-rotation-second
+  animation: 6s reel-rotation-second cubic-bezier(.25,.75,.5,1.05) forwards
+
+@keyframes reel-rotation-second
+  0%
+    transform: rotate(1037deg)
+  80%
+    transform: rotate(1897deg)
+  90%
+    transform: rotate(1885deg)
+  100%
+    transform: rotate(1892deg)
+
+.hide
+  display: none
+
+.opacity-overlay
+  opacity: 0
+  visibility: hidden
+
+@keyframes levitate
+  0%
+    transform: translateY(0)
+  50%
+    transform: translateY(-10px)
+  100%
+    transform: translateY(0)
